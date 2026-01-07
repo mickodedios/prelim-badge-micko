@@ -1,0 +1,209 @@
+/* About Page Styling - Matches main.css design language */
+.about-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #e8e8e8;
+  line-height: 1.5;
+  background: #0a0e1a;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Hero Section with Background */
+.hero-banner {
+  background: linear-gradient(rgba(10, 14, 26, 0.7), rgba(10, 14, 26, 0.8)),
+              url('/orgss.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: -0.02em;
+}
+
+/* Animated particles effect */
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="rgba(139,92,246,0.15)"/><circle cx="50" cy="30" r="3" fill="rgba(167,139,250,0.1)"/><circle cx="80" cy="70" r="2" fill="rgba(96,165,250,0.1)"/></svg>');
+  animation: float 20s infinite linear;
+  opacity: 0.4;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100px); }
+}
+
+.hero-overlay {
+  max-width: 900px;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-overlay h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 30px rgba(139,92,246,0.3);
+  color: white;
+}
+
+.hero-overlay p {
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+  color: #e8e8e8;
+  line-height: 1.7;
+}
+
+/* Content Area */
+.content-body {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 80px 60px;
+  background: linear-gradient(to bottom, #0f1419 0%, #1a1f2e 100%);
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(139,92,246,0.1);
+  position: relative;
+}
+
+.content-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #8b5cf6, #60a5fa, #a78bfa, #8b5cf6);
+  background-size: 300% 100%;
+  animation: gradientShift 3s ease infinite;
+  border-radius: 50px 50px 0 0;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.content-body h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #f3f4f6;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.content-body h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #60a5fa);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(139,92,246,0.5);
+}
+
+.content-body p {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  margin: 0 0 25px 0;
+  line-height: 1.8;
+}
+
+/* Gift Button */
+.gift-button {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: #0a0e1a;
+  padding: 18px 40px;
+  margin: 40px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(139,92,246,0.4), 0 0 30px rgba(167,139,250,0.2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-button::before {
+  content: '🎁';
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+.gift-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(139,92,246,0.5), 0 0 40px rgba(167,139,250,0.3);
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+}
+
+.gift-button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .hero-banner {
+    height: 400px;
+  }
+
+  .content-body {
+    padding: 40px 30px;
+    margin: 40px 20px;
+  }
+
+  .content-body h2 {
+    font-size: 2rem;
+  }
+
+  .content-body p {
+    font-size: 1rem;
+  }
+
+  .gift-button {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+}

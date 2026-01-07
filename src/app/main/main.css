@@ -1,0 +1,304 @@
+/* --- Global Resets for this component --- */
+:host {
+  display: block;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #e8e8e8;
+  line-height: 1.5;
+  background: #0a0e1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-container{
+  margin-top: -100px;
+  margin-bottom: 60px;
+  background: #0a0e1a;
+}
+
+/* --- Hero Section --- */
+.hero {
+  background-image: url('/partners_bg.jpg');
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  letter-spacing: -0.02em;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="2" fill="rgba(139,92,246,0.15)"/><circle cx="50" cy="30" r="3" fill="rgba(167,139,250,0.1)"/><circle cx="80" cy="70" r="2" fill="rgba(96,165,250,0.1)"/></svg>');
+  animation: float 20s infinite linear;
+  opacity: 0.4;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100px); }
+}
+
+/* Hero Text */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 30px rgba(139,92,246,0.3);
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin: 0 0 50px 0;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+  color: white;
+}
+
+.cta-wrapper {
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.cta-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: #0a0e1a;
+  padding: 18px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(139,92,246,0.4), 0 0 30px rgba(167,139,250,0.2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cta-text:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(139,92,246,0.5), 0 0 40px rgba(167,139,250,0.3);
+  background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+}
+
+/* --- Main Content Section --- */
+.content-wrapper {
+  padding: 80px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #0f1419 0%, #1a1f2e 100%);
+  margin-top: 60px;
+  border-radius: 50px;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  color: #f3f4f6;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #60a5fa);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(139,92,246,0.5);
+}
+
+.card-body .tech-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #8892b0;
+}
+
+/* --- Grid Layout --- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+/* --- Card Styles --- */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #1a1f2e;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border: 1px solid rgba(139,92,246,0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(139,92,246,0.3), 0 0 40px rgba(96, 165, 250, 0.2);
+  border-color: rgba(139,92,246,0.3);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #8b5cf6, #60a5fa, #a78bfa, #8b5cf6);
+  background-size: 300% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.wireframe-image {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  height: 220px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.wireframe-image::after {
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  filter: brightness(1.5);
+}
+
+/* Shared image styling */
+.wireframe-image {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+/* Midnight in Tokyo */
+.card:nth-child(1) .wireframe-image {
+  background-image: url('/tokyo.jpg');
+}
+
+/* Twilight in Melbourne */
+.card:nth-child(2) .wireframe-image {
+  background-image: url('/melbourne.jpg');
+}
+
+/* Dusk in London */
+.card:nth-child(3) .wireframe-image {
+  background-image: url('/london.jpg');
+}
+
+/* Starlit New York */
+.card:nth-child(4) .wireframe-image {
+  background-image: url('/newyork.jpg');
+}
+
+.card-body {
+  flex-grow: 1;
+  padding: 25px;
+  background: #1a1f2e;
+}
+
+.card-body h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  color: #8b5cf6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(139,92,246,0.2);
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.card-footer {
+  background: linear-gradient(to right, #0f1419, #1a1f2e);
+  padding: 20px 25px;
+  font-size: 0.95rem;
+  color: #60a5fa;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+.card-footer::before {
+  font-size: 1.2rem;
+  filter: brightness(1.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .content-wrapper {
+    padding: 40px 20px;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+}

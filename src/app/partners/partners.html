@@ -1,0 +1,45 @@
+<main class="partners-wrapper">
+
+  <div class="hero-section">
+    <div class="hero-overlay">
+      <h1 class="hero-title">After Dark Collaborators</h1>
+      <p class="hero-desc">
+        Our trusted partners power these late-night sessions. As the city lights come alive, their innovation fuels ideas that shine beyond sunset.
+      </p>
+
+      <button class="cta-button" (click)="toggleTable()">
+        {{ isTableExpanded ? 'Hide Evening Partners' : 'Evening Partners' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="content-section" *ngIf="isTableExpanded">
+    <h2 class="section-heading">Our Night Patrons</h2>
+
+    <div class="table-responsive">
+      <table class="partners-table">
+        <thead>
+          <tr>
+            <th>Partner</th>
+            <th>Crest</th>
+            <th>Night Tier</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let partner of partners">
+            <td class="col-name">{{ partner.name }}</td>
+            <td class="col-logo">
+              <img [src]="partner.logoUrl" [alt]="partner.name + ' logo'" class="partner-logo-img">
+            </td>
+            <td class="col-level">{{ partner.sponsorship }}</td>
+            <td class="col-link">
+              <a href="#">{{ partner.link }}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>

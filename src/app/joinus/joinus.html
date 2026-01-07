@@ -1,0 +1,40 @@
+<main class="container">
+  <section class="hero-section">
+    @if (!showForm) {
+      <div class="hero-overlay">
+        <h1>Where Researchers Meet After Dark</h1>
+        <p>Connect with researchers worldwide and receive exclusive after-hours insights and updates.</p>
+        <button class="join-btn" (click)="showForm = true">Unlock Night Access</button>
+      </div>
+    } @else {
+      <div class="form-container">
+        <h2>After-Hours Entry</h2>
+
+        <div class="form-group-row">
+          <div class="input-field">
+            <label>Firstname:</label>
+            <input type="text" [(ngModel)]="user.firstName" placeholder="Enter your first name">
+          </div>
+          <div class="input-field">
+            <label>Lastname:</label>
+            <input type="text" [(ngModel)]="user.lastName" placeholder="Enter your last name">
+          </div>
+        </div>
+
+        <p class="display-text">Fullname: {{ user.firstName }} {{ user.lastName }}</p>
+
+        <div class="form-group">
+          <label>Email Address:</label>
+          <input type="email" [(ngModel)]="user.email" placeholder="your.email@nocturnal-labs.edu">
+        </div>
+        <p class="display-text">Contact: {{ user.email }}</p>
+
+        <div class="form-group">
+          <label>Affiliation:</label>
+          <input type="text" [(ngModel)]="user.institution" placeholder="Enter your institution">
+        </div>
+        <p class="display-text">Affiliation: {{ user.institution }}</p>
+      </div>
+    }
+  </section>
+</main>
